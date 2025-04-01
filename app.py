@@ -6,6 +6,10 @@ import transportadoras
 
 app = Flask(__name__)
 
+from flask_cors import CORS
+CORS(app, resources={r"/api/*": {"origins": "https://cadeia-logistica.azurewebsites.net"}})
+
+
 # Rota GET para retornar a lista de produtos disponíveis
 @app.route('/api/produtos', methods=['GET'])
 def get_produtos():
