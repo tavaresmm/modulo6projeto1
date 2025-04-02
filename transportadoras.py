@@ -10,7 +10,7 @@ def somar_pontuacoes_por_transportadora_origem():
     scores_transportadoras = collections.defaultdict(list)
     
     # Ler o ficheiro CSV com delimitador ","
-    with open('transportadoras.csv', newline='', encoding='utf-8') as file:
+    with open('/mnt/csvprojeto/transportadoras.csv', newline='', encoding='utf-8') as file:
         reader = csv.reader(file, delimiter=',')  # Define "," como delimitador
         next(reader)  # Ignorar cabeçalho
         

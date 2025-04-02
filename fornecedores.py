@@ -8,7 +8,7 @@ def somar_pontuacoes_por_produto_localizacao():
     produtos = set()  # Set para armazenar produtos únicos
     
     # Ler o ficheiro CSV
-    with open('fornecedores.csv', newline='', encoding='utf-8') as file:
+    with open('/mnt/csvprojeto/fornecedores.csv', newline='', encoding='utf-8') as file:
         reader = csv.reader(file)
         next(reader)  # Ignorar cabeçalho
         

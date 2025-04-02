@@ -2,13 +2,10 @@ from flask import Flask, render_template, request, jsonify
 import fornecedores
 import consumidor
 import transportadoras
-
+from flask_cors import CORS
 
 app = Flask(__name__)
-
-from flask_cors import CORS
-CORS(app, resources={r"/api/*": {"origins": "https://cadeia-logistica.azurewebsites.net"}})
-
+CORS(app) # Permite CORS para todas as rotas, você pode ajustar se necessário
 
 # Rota GET para retornar a lista de produtos disponíveis
 @app.route('/api/produtos', methods=['GET'])
@@ -237,10 +234,7 @@ def historico():
     return render_template('historico.html', escolhas=escolhas)
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)
-
+    app.run(debug=True, host="0.0.0.0")
 
 
 
