@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import fornecedores
 import consumidor
 import transportadoras
+import os
 from flask_cors import CORS
 
 app = Flask(__name__)
