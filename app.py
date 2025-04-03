@@ -6,6 +6,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app) # Permite CORS para todas as rotas, você pode ajustar se necessário
+port = int(os.environ.get("PORT", 5000))
 
 # Rota GET para retornar a lista de produtos disponíveis
 @app.route('/api/produtos', methods=['GET'])
@@ -234,7 +235,7 @@ def historico():
     return render_template('historico.html', escolhas=escolhas)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0", port=port)
 
 
 
